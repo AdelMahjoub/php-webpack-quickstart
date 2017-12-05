@@ -1,7 +1,7 @@
 <?php require_once VIEWS_FOLDER .'/partials/header.php'; ?>
 
 <?php require_once VIEWS_FOLDER . '/partials/navbar.php'; ?>
-<section>
+<section id="root">
     <?= $content ?>
 </section>
 

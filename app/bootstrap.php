@@ -13,7 +13,8 @@ define('PUBLIC_FOLDER', ROOT_FOLDER . '/public');
 define('DIST_FOLDER', PUBLIC_FOLDER . '/dist');
 
 /* ============================ URLs ================================== */
-define('PUBLIC_URL', IN_DEVELOPMENT ? '//' . $_SERVER['SERVER_NAME'] . '/test/public' : '//' . $_SERVER['SERVER_NAME']);
+$publicPathname = implode('/', array_diff(explode('/', PUBLIC_FOLDER), explode('/', $_SERVER['DOCUMENT_ROOT'])));
+define('PUBLIC_URL', IN_DEVELOPMENT ? '//' . $_SERVER['SERVER_NAME'] . '/' . $publicPathname : '//' . $_SERVER['SERVER_NAME']);
 define('PUBLIC_ASSETS_URL', PUBLIC_URL . '/dist');
 
 /* ============================ Title ================================= */
