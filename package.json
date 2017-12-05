@@ -1,15 +1,15 @@
 {
-  "name": "test",
+  "name": "php-webpack-quickstart",
   "version": "1.0.0",
-  "description": "",
+  "description": "php and webpack boilerplate",
   "main": "webpack.config.js",
   "scripts": {
     "dev": "WEBPACK_BUILD_MODE=dev webpack --progress",
     "build": "WEBPACK_BUILD_MODE=prod webpack --optimize-minimize --progress"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["php", "webpack", "javascript"],
+  "author": "Adel Mahjoub",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.2.1",
     "babel-core": "^6.26.0",
