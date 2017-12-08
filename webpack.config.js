@@ -3,7 +3,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const autoPrefixer = require('autoprefixer');
 
 const dev = process.env.WEBPACK_BUILD_MODE === 'dev';
 
@@ -16,19 +15,6 @@ const cssLoaders = [
         },
     },
 ];
-
-if (!dev) {
-    cssLoaders.push({
-        loader: 'postcss-loader',
-        options: {
-            plugins: () => [
-                autoPrefixer({
-                    browsers: ['last 2 versions', 'ie > 8'],
-                }),
-            ],
-        },
-    });
-}
 
 const config = {
     entry: {
@@ -63,7 +49,7 @@ const config = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]'
+                            name: '[hash].[ext]'
                         }
                     },
                     {
